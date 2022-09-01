@@ -17,7 +17,6 @@ def create_task(request):
 
 
 def delete_task(request, id):
-    id = request.GET.get('id')
     task = Task.objects.get(id=id)
     task.delete()
     return redirect('/tasks/')

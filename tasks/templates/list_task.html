@@ -25,10 +25,12 @@
   <div class="task">
     <h2>{{ task.title }}</h2>
     <p>{{ task.description }}</p>
-    <!-- <form method="POST" action="{% url 'delete_task' task.id %}">
+    <form method="POST" action="{% url 'delete_task' task.id %}">
       {% csrf_token %}
       <button>Delete</button>
-    </form> -->
+    </form>
+    {% empty %}
+    <h2>No tasks yet</h2>
     {% endfor %}
 
 
